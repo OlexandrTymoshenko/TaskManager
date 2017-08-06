@@ -12,6 +12,7 @@ namespace TaskManager.Controllers
         {
             ViewBag.Title = "Home Page";
 
+            ViewBag.UserName = User.Identity.Name;
             return View();
         }
     }

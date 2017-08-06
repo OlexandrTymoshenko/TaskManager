@@ -1,0 +1,30 @@
+﻿@model TaskManager.Middleware.Data.Api.Account.CreateUserRequest
+
+@{
+    ViewBag.Title = "Registration page";
+}
+
+<h2>Registration page</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.ValidationSummary()
+        <p>
+            <label>Name</label><br />
+            @Html.EditorFor(x => x.Name)
+        </p>
+        <p>
+            <label>Password</label><br />
+            @Html.PasswordFor(x => x.Password);
+        </p>
+        <p>
+            <label>Address</label><br />
+            @Html.EditorFor(x => x.Address);
+        </p>
+        <p><button type="submit">Submit</button></p>
+    </div>
+}
